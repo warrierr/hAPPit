@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function(app) {
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'hAPPit - Home' });
-});
+	/* GET home page. */
+	app.get('/', function(req, res) {
+	  res.render('index', { title: 'hAPPit - Home' });
+	});
 
-module.exports = router;
+	/* Dashboard for the main app */
+	app.get("/home", function(req,res) {
+		res.render('app', { title: 'hAPPit - Dashboard' });
+	});
+
+}
