@@ -1,0 +1,108 @@
+body: {
+	margin: 0px;
+	padding: 0px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Navbar */
+
+.navbar-brand {
+	font-size: 35px;
+	color: #fff;
+}
+
+.navbar-brand:hover {
+	color: #fff;
+}
+
+nav .dropdown {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.nav>li>a {
+	color: #fff;
+}
+
+.nav>li>a:hover, nav .dropdown:hover {
+	background-color: #1D242B;
+	color: #fff;
+	cursor: pointer;
+}
+
+#headerDropdown {
+	text-decoration: none;
+	color: #fff;
+}
+
+#headerDropdown:hover {
+	color: #fff;
+}
+
+.nav .open>a:hover, .nav .open>a:active, .nav .open>a {
+	background-color: #1D242B;
+}
+
+.container {
+	background-color: #000;
+	width: 100%;
+}
+
+
+/* Main Content */
+
+.main-content {
+	margin-top: 30px;
+}
+
+/* Create Buttons Wrap */
+
+.create-buttons-wrap {
+	margin-top: 100px;
+}
+
+.habit-button-wrap {
+	width: 300px;
+	height: 200px;
+	padding-left: 36px;
+	padding-top: 50px;
+	border-radius: 30px;
+	color: #fff;
+}
+
+.habit-button-wrap:active {
+	box-shadow: 0px 0px 10px #000 inset;
+}
+
+.break-habit-button {
+	background-color: red;
+}
+
+.break-habit-button:hover {
+	background-color: #CC0000;
+}
+
+
+.make-habit-button {
+	background-color: green;
+}
+
+.make-habit-button:hover {
+	background-color: #196C19;
+}
+
+
+/* New make habit */
+.newmake-container form {
+	margin-top: 70px;
+	border: solid 1px black;
+	padding: 15px;
+	max-width: 500px;
+}
+
+.newmake-create-btn {
+	float: right;
+}

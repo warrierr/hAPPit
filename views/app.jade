@@ -1,11 +1,50 @@
 doctype html
-html
+html(ng-app="HappIT")
 	head
 		title= title
 		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/app.css')
 	body
-		h1 Hello, Y'All
+		.content-wrap(ng-controller="AppController")
+			.container
+				.navbar-header
+					a.navbar-brand(href="#") HappIT
+				nav.collapse.navbar-collapse.bs-navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li
+							a(href="#") Achievements
+						li
+							a(href="#") Blog
+						li
+							a(href="#") Pricing
+						li
+							.dropdown
+								a#headerDropdown.dropdown-toggle(type="button", data-toggle="dropdown") Hello, Ben
+									span.caret
+								ul.dropdown-menu(aria-labelledby="headerDropdown")
+									li
+										a(href="#") Profile
+									li
+										a(href="#") Privacy
+									li.divider
+									li
+										a(href="/", target="_self") Logout
+			.main-content
+				.container-fluid
+					.row
+						.col-md-1
+						.bread-crumbs.col-md-4
+							a(href="/dash") < Back to dashboard
+					.row 
+						ng-view
+
 		script(src="/bower_components/jquery/dist/jquery.min.js")
+		script(src="/bower_components/underscore/underscore.js")
 		script(src="/bower_components/angular/angular.min.js")
+		script(src="/bower_components/angular-route/angular-route.min.js")
+		script(src="/bower_components/bootstrap/js/dropdown.js")
+
+		// Custom
 		script(src="/javascripts/app.js")
+		script(src="/javascripts/db.js")
+		script(src="/javascripts/new.js")
