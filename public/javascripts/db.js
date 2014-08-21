@@ -32,6 +32,11 @@ app.factory("DB", function() {
 		createMistake: function(mistake) {
 			data.mistakes.push(mistake);
 		},
+		getHabitMistakes: function(id) {
+			return _.filter(data.mistakes, function(mistake) {
+				return mistake.id === id;
+			});
+		},
 
 		// Successes
 		getSuccesses: function() {
@@ -39,6 +44,11 @@ app.factory("DB", function() {
 		},
 		createSuccess: function(success) {
 			data.successes.push(success);
+		},
+		getHabitSuccesses: function(id) {
+			return _.filter(data.successes, function(success) {
+				return success.id === id;
+			});
 		},
 
 		// Feedback
