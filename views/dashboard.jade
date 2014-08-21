@@ -12,6 +12,7 @@
 		h1#habits-header Habits
 		ul.habit(ng-repeat="habit in habits")
 			li.habit-item 
-				h3 {{habit.name}}
+				a(ng-click="analyzeHabit(habit)")
+					h3 {{habit.name}}
 				button.btn(ng-class="getButtonClass(habit.type)", ng-click="logHabit(habit)") {{getButtonText(habit.type)}}
 	.col-md-2

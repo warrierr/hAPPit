@@ -37,4 +37,9 @@ angular.module("HappIT")
 			$("body").trigger("logHabit", [habit]);
 		}
 
+		// Analyze your progress
+		$scope.analyzeHabit = function(habit) {
+			$("body").trigger("analyze-habit", [habit]);
+		};
+
 	}]);

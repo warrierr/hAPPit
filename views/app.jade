@@ -6,6 +6,20 @@ html(ng-app="HappIT")
 		link(rel='stylesheet', href='/stylesheets/app.css')
 	body
 		.content-wrap(ng-controller="AppController")
+			#main-modal.modal.fade
+				.modal-dialog
+					.modal-content
+						.modal-header
+							button.close(type="button", data-dismiss="modal")
+								span(aria-hidden="true") &times;
+								span.sr-only Close
+							h4.modal-title {{habitName}}
+						.modal-body
+							p You have {{habitText}} for...
+							h3 2 Days, and 02:45:23 hours
+							p in a row. Keep up the good work!
+						.modal-footer
+							button.btn.btn-default(type="button", data-dismiss="modal") Close
 			.log-notification
 				h3 {{alertText}}
 			.main-content-wrap
@@ -42,13 +56,16 @@ html(ng-app="HappIT")
 							ng-view
 
 		script(src="/bower_components/jquery/dist/jquery.min.js")
+		script(src="/bower_components/jquery-stopwatch-master/jquery.stopwatch.js")
 		script(src="/bower_components/underscore/underscore.js")
 		script(src="/bower_components/angular/angular.min.js")
 		script(src="/bower_components/angular-route/angular-route.min.js")
 		script(src="/bower_components/bootstrap/js/dropdown.js")
+		script(src="/bower_components/bootstrap/js/modal.js")
 
 		// Custom
-		script(src="/javascripts/app.js")
+		script(src="/javascripts/main.js")
 		script(src="/javascripts/db.js")
+		script(src="/javascripts/app.js")
 		script(src="/javascripts/new.js")
 		script(src="/javascripts/dashboard.js")
