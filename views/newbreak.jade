@@ -1,0 +1,14 @@
+.newmake-container
+	.col-md-4
+	form.col-md-4(novalidate)
+		.form-group
+			label(for="habit-name") The habit I am breaking is...
+			input#habit-name.form-control(type="text", ng-model="newHabit.name", placeholder="Name...")
+		.form-group
+			label I will NOT {{newHabit.name}} for 30 days.
+		.form-group
+			label(for="habit-days") I consider it a successful day if I {{newHabit.name}} less than
+			input#habit-days.form-control(type="text", ng-model="newHabit.numADay", placeholder="Ex. 3")
+			label times a day.
+		button.newmake-create-btn.btn.btn-primary(ng-click="createHabit()") Begin!
+	.col-md-4

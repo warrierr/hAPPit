@@ -10,6 +10,7 @@ app.factory("DB", function() {
 	data.mistakes = [];
 	data.successes = [];
 	data.feedback = [];
+	data.archived = [];
 
 	return {
 
@@ -21,7 +22,7 @@ app.factory("DB", function() {
 			return data.habits.length > 0;
 		},
 		createHabit: function(habit) {
-			data.habits.push(habit);
+			data.habits.unshift(habit);
 		},
 
 		// Mistakes
@@ -29,7 +30,7 @@ app.factory("DB", function() {
 			return data.mistakes;
 		},
 		createMistake: function(mistake) {
-			data.mistakes.push(habit);
+			data.mistakes.push(mistake);
 		},
 
 		// Successes

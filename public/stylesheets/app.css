@@ -7,6 +7,10 @@ a:hover {
 	text-decoration: none;
 }
 
+ul {
+	list-style-type: none;
+}
+
 /* Navbar */
 
 .navbar-brand {
@@ -105,4 +109,68 @@ nav .dropdown {
 
 .newmake-create-btn {
 	float: right;
+}
+
+
+/* Dashboard */
+
+.dashboard-wrap{
+	margin-top: 70px;
+}
+
+.add-new-habit {
+	border-radius: 15px;
+	border: black solid 1px;
+	padding-left: 50px;
+}
+
+.archived-habit-button {
+	border-radius: 15px;
+	border: black solid 1px;
+	margin-top: 70px;
+	text-align: center;
+}
+
+.add-icon {
+	display: block;
+	width: 91px;
+	height: 90px;
+	background-image: url("/images/plus_new-event.png");
+	margin-left: 52px;
+}
+
+.habit-item {
+	margin-bottom: 20px;
+	border: black solid 1px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.habit-item>h3 {
+	display: inline-block;
+	margin-top: 15px;
+}
+.habit-item>button {
+	margin-top: 11px;
+	float: right;
+}
+
+.log-notification {
+	display: none;
+	position: fixed;
+	width: 400px;
+	height: 250px;
+	z-index: 99999;
+	top: 30%;
+	left: 36%;
+	border-radius: 15px;
+	border: solid 1px grey;
+	color: #fff;
+	text-align: center;
+	padding-top: 80px;
+}
+
+#habits-header {
+	margin-top: 0px;
+	margin-left: 40px;
 }

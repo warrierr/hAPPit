@@ -6,37 +6,40 @@ html(ng-app="HappIT")
 		link(rel='stylesheet', href='/stylesheets/app.css')
 	body
 		.content-wrap(ng-controller="AppController")
-			.container
-				.navbar-header
-					a.navbar-brand(href="#") HappIT
-				nav.collapse.navbar-collapse.bs-navbar-collapse
-					ul.nav.navbar-nav.navbar-right
-						li
-							a(href="#") Achievements
-						li
-							a(href="#") Blog
-						li
-							a(href="#") Pricing
-						li
-							.dropdown
-								a#headerDropdown.dropdown-toggle(type="button", data-toggle="dropdown") Hello, Ben
-									span.caret
-								ul.dropdown-menu(aria-labelledby="headerDropdown")
-									li
-										a(href="#") Profile
-									li
-										a(href="#") Privacy
-									li.divider
-									li
-										a(href="/", target="_self") Logout
-			.main-content
-				.container-fluid
-					.row
-						.col-md-1
-						.bread-crumbs.col-md-4
-							a(href="/dash") < Back to dashboard
-					.row 
-						ng-view
+			.log-notification
+				h3 {{alertText}}
+			.main-content-wrap
+				.container
+					.navbar-header
+						a.navbar-brand(href="#") HappIT
+					nav.collapse.navbar-collapse.bs-navbar-collapse
+						ul.nav.navbar-nav.navbar-right
+							li
+								a(href="#") Achievements
+							li
+								a(href="#") Blog
+							li
+								a(href="#") Pricing
+							li
+								.dropdown
+									a#headerDropdown.dropdown-toggle(type="button", data-toggle="dropdown") Hello, Ben
+										span.caret
+									ul.dropdown-menu(aria-labelledby="headerDropdown")
+										li
+											a(href="#") Profile
+										li
+											a(href="#") Privacy
+										li.divider
+										li
+											a(href="/", target="_self") Logout
+				.main-content
+					.container-fluid
+						.row
+							.col-md-1
+							.bread-crumbs.col-md-4
+								a(href="/dash") < Back to dashboard
+						.row 
+							ng-view
 
 		script(src="/bower_components/jquery/dist/jquery.min.js")
 		script(src="/bower_components/underscore/underscore.js")
@@ -48,3 +51,4 @@ html(ng-app="HappIT")
 		script(src="/javascripts/app.js")
 		script(src="/javascripts/db.js")
 		script(src="/javascripts/new.js")
+		script(src="/javascripts/dashboard.js")
