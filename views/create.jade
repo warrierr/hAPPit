@@ -1,12 +1,75 @@
-.create-buttons-wrap
-	.col-md-2
-	.col-md-3
-		a(href="/newhabit/make") 
-			.habit-button-wrap.make-habit-button
-				h1 Make a Habit
-	.col-md-2
-	.col-md-3
-		a(href="/newhabit/break") 
-			.habit-button-wrap.break-habit-button
-				h1 Break a Habit
-	.col-md-2
+.row
+	.col-md-1
+	.bread-crumbs.col-md-4
+		a(href="/home") < Back to dashboard
+.row
+	.create-buttons-wrap(ng-show="showType()")
+		.col-md-2
+		.col-md-3
+			a(ng-click="newMake()") 
+				.habit-button-wrap.make-habit-button
+					h1 Make a Habit
+					.detail-of-type (Maintain a good habit)
+		.col-md-2
+		.col-md-3
+			a(ng-click="newBreak()") 
+				.habit-button-wrap.break-habit-button
+					h1 Break a Habit
+					.detail-of-type (Get rid of a bad habit)
+		.col-md-2
+	.newmake-container(ng-show="showBreak()")
+		.col-md-4
+		form.col-md-4(novalidate)
+			.form-group
+				label(for="habit-name") I will NOT...
+				input.bad-habit-name.form-control(type="text", ng-model="newHabit.name", placeholder="Name of habit...")
+			.form-group
+				label(for="habit-days") for more than 
+				input.habit-days.form-control(type="text", ng-model="newHabit.numADay", placeholder="Ex. 3")
+				label times a day for 
+				input.habit-total-days.form-control(type="text", ng-model="newHabit.numDays", placeholder="Ex. 30") 
+				label.bottom-label days in a row.
+			button.newmake-create-btn.btn.btn-primary(ng-click="chooseFriends()") Begin!
+		.col-md-4
+	.newmake-container(ng-show="showMake()")
+		.col-md-4
+		form.col-md-4(novalidate)
+			.form-group
+				label(for="habit-name") I will...
+				input.habit-name.form-control(type="text", ng-model="newHabit.name", placeholder="Name of habit...")
+			.form-group
+				label(for="habit-days") for 
+				input.habit-days.form-control(type="text", ng-model="newHabit.numADay", placeholder="Ex. 3")
+				label times a day for
+				input.habit-total-days.form-control(type="text", ng-model="newHabit.numDays", placeholder="Ex. 30") 
+				label days in a row.
+			button.newmake-create-btn.btn.btn-primary(ng-click="chooseFriends()") Next
+		.col-md-4
+	.newmake-container(ng-show="showFriends()")
+		.col-md-4
+		form.col-md-4(novalidate)
+			.form-group
+				label Challenge Your Friends:
+				input.find-friends.form-control(type="text", placeholder="Search for your friends...")
+			.auto-complete
+				.matched(ng-repeat="friend in matchedFriends")
+					h1 Matches
+					img.friend-img(ng-src="{{friend.img}}")
+					.friend-name {{friend.name}}
+			.friends-list Friends:
+				.friend-choosen(ng-repeat="friend in choosenFriends")
+					img.friend-img(ng-src="{{friend.img}}")
+					.friend-name {{friend.name}}
+			button.newmake-create-btn.btn.btn-primary(ng-click="chooseStakes()") Next
+		.col-md-4
+	.newmake-container(ng-show="showStakes()")
+		.col-md-4
+		form.col-md-4(novalidate)
+			.form-group
+				label If you are the last of your friends to complete this, you will pay:
+			.form-group
+				label $
+				input.stakes-field.form-control(type="text", ng-model="newHabit.stakes", placeholder="ex. $20")
+				label to the first friend to complete this.
+			button.newmake-create-btn.btn.btn-primary(ng-click="createHabit()") Begin!
+		.col-md-4

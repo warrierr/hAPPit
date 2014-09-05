@@ -5,20 +5,12 @@ var app = angular.module("HappIT", ["ngRoute"]);
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
 	$routeProvider.
 		when("/home", {
-			templateUrl: "/create"
-		}).
-		when("/create", {
-			templateUrl: "/create"
-		}).
-		when("/newhabit/:type", {
-			templateUrl: function(params) {
-				return "/newhabit/"+params.type;
-			},
-			controller: "NewHabit"
-		}).
-		when("/dash",  {
 			templateUrl: "/dashboard",
 			controller: "Dashboard"
+		}).
+		when("/create", {
+			templateUrl: "/create",
+			controller: "NewHabit"
 		}).
 		otherwise({
         	redirectTo: "/home"

@@ -11,6 +11,13 @@ app.factory("DB", function() {
 	data.successes = [];
 	data.feedback = [];
 	data.archived = [];
+	data.friends = 
+		[
+			{name: "John Frazier", img: "/images/fraz.jpg"},
+			{name: "Eric Tilson", img: "/images/eric.jpg"},
+			{name: "John Burns", img: "/images/burns.jpg"},
+			{name: "Sean Marinelli", img: "/images/sean.jpg"}
+		];
 
 	return {
 
@@ -57,6 +64,14 @@ app.factory("DB", function() {
 		},
 		createFeedback: function(feedback) {
 			data.habits.push(feedback);
+		},
+
+		// Friends
+		matchFriends: function(name) {
+			var re = new RegExp(name, "i");
+			return _.filter(data.friends, function(friend) {
+				return re.test(friend.name);
+			});
 		}
 	};
 

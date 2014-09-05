@@ -13,11 +13,31 @@ html(ng-app="HappIT")
 							button.close(type="button", data-dismiss="modal")
 								span(aria-hidden="true") &times;
 								span.sr-only Close
-							h4.modal-title {{habitName}}
+							h1.modal-title {{habitName}}
 						.modal-body
-							p You have {{habitText}} for...
-							h3 {{timeText}}
-							p in a row. Keep up the good work!
+							h4 Today's Progress:
+							.progress-wrap
+								.bar-wrap
+									.bar-length-today
+							h4 Overall Progress:
+							.progress-wrap
+								.bar-wrap
+									.bar-length-overall
+							.dividing-line
+							h4 Compare with Friends(overall):
+								h5 John F. 
+								.progress-wrap
+									.bar-wrap
+										.bar-length-john
+								h5 Eric T. 
+								.progress-wrap
+									.bar-wrap
+										.bar-length-eric
+								h5 Sean M. 
+								.progress-wrap
+									.bar-wrap
+										.bar-length-sean
+
 						.modal-footer
 							button.btn.btn-default(type="button", data-dismiss="modal") Close
 			.log-notification
@@ -48,10 +68,6 @@ html(ng-app="HappIT")
 											a(href="/", target="_self") Logout
 				.main-content
 					.container-fluid
-						.row
-							.col-md-1
-							.bread-crumbs.col-md-4
-								a(href="/dash") < Back to dashboard
 						.row 
 							ng-view
 

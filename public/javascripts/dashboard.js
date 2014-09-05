@@ -2,6 +2,7 @@ angular.module("HappIT")
 	.controller("Dashboard", ["$scope", "DB", "$routeParams", "$location", function($scope, DB, $routeParams, $location) {
 
 		$scope.habits = DB.getHabits();
+
 		// Get the button class
 		$scope.getButtonClass = function(type) {
 			return (type === "make") ? "btn-success" : "btn-danger";
@@ -30,6 +31,11 @@ angular.module("HappIT")
 			// Send user notification
 			$scope.notify(habit);
 		};
+
+		// Check if there are any habits shown
+		$scope.hasHabits = function() {
+			return DB.hasHabits();
+		}
 
 
 		// Notify and encourage the user

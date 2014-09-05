@@ -79,6 +79,7 @@ nav .dropdown {
 	padding-top: 50px;
 	border-radius: 30px;
 	color: #fff;
+	cursor: pointer;
 }
 
 .habit-button-wrap:active {
@@ -103,6 +104,12 @@ nav .dropdown {
 }
 
 
+.detail-of-type {
+	margin-left: 40px;
+	font-size: 16px;
+	font-family: "Times New Roman", Times, serif
+}
+
 /* New make habit */
 .newmake-container form {
 	margin-top: 70px;
@@ -115,6 +122,51 @@ nav .dropdown {
 	float: right;
 }
 
+.habit-name {
+	display: inline;
+	margin-left: 15px;
+	width: 80%;
+} 
+
+.bad-habit-name {
+	display: inline;
+	margin-left: 15px;
+	width: 70%;
+}
+
+.habit-days, .habit-total-days {
+	display: inline;
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 15%;
+	padding-right: 2px;
+}
+
+.bottom-label {
+	margin-top: 10px;
+}
+
+.find-friends {
+	width: 80%;
+}
+
+.friend-name {
+	display: inline;
+	margin-left: 15px;
+	font-size: 16px;
+}
+
+.friend-choosen {
+	margin-bottom: 5px;
+	cursor: pointer;
+	width: 100%;
+}
+
+.stakes-field {
+	display: inline;
+	margin-right: 15px;
+	width: 20%;
+}
 
 /* Dashboard */
 
@@ -125,7 +177,11 @@ nav .dropdown {
 .add-new-habit {
 	border-radius: 15px;
 	border: black solid 1px;
-	padding-left: 50px;
+}
+
+.new-habit-inner-container {
+	width: 135px;
+	margin: auto;
 }
 
 .archived-habit-button {
@@ -140,7 +196,7 @@ nav .dropdown {
 	width: 91px;
 	height: 90px;
 	background-image: url("/images/plus_new-event.png");
-	margin-left: 52px;
+	margin-left: 18px;
 }
 
 .habit-item {
@@ -183,4 +239,60 @@ nav .dropdown {
 #habits-header {
 	margin-top: 0px;
 	margin-left: 40px;
+}
+
+
+.no-habits {
+	margin-top: 30px;
+	margin-left: 40px;
+	font-size: 30px;
+	color: rgb(66, 139, 202);
+}
+
+/********** Analytics ***********/
+.bar-wrap {
+	width: 80%;
+	border: solid black 1px;
+	height: 30px;
+}
+
+.bar-length-today {
+	width: 50%;
+	height: 100%;
+	background-color: #5cb85c;
+}
+
+.bar-length-overall {
+	width: 3%;
+	height: 100%;
+	background-color: #5cb85c;
+
+}
+
+.bar-length-john {
+	width: 5%;
+	height: 100%;
+	background-color: #5cb85c;
+
+}
+
+.bar-length-sean {
+	width: 20%;
+	height: 100%;
+	background-color: #5cb85c;
+
+}
+
+.bar-length-eric {
+	width: 2%;
+	height: 100%;
+	background-color: #5cb85c;
+
+}
+
+.dividing-line {
+	width: 100%;
+	border-bottom: 1px solid grey;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

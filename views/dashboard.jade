@@ -2,9 +2,10 @@
 	.col-md-2
 	.col-md-3
 		.add-new-habit
-			h3 Add Another Habit
-			a(href="/create")
-				.add-icon
+			.new-habit-inner-container
+				h3 Add a Habit
+				a(href="/create")
+					.add-icon
 		.archived-habit-button
 			h3 Archived Habits
 			h1 0
@@ -15,4 +16,6 @@
 				a(ng-click="analyzeHabit(habit)")
 					h3 {{habit.name}}
 				button.btn(ng-class="getButtonClass(habit.type)", ng-click="logHabit(habit)") {{getButtonText(habit.type)}}
+		.no-habits(ng-hide="hasHabits()")
+			| You are not tracking any habits.
 	.col-md-2
